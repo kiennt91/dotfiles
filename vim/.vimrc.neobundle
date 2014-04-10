@@ -1,0 +1,251 @@
+set nocompatible
+
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+" let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Recommended to install
+" After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefiel
+NeoBundle 'Shougo/vimproc', {
+    \ 'build' : {
+    \     'windows' : 'make -f make_mingw32.mak',
+    \     'cygwin' : 'make -f make_cygwin.mak',
+    \     'mac' : 'make -f make_mac.mak',
+    \     'unix' : 'make -f make_unix.mak',
+    \    },
+    \ }
+
+" Bundle 一覧
+
+""" Shougo's library
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler'
+
+"NeoBundle 'alpaca-tc/alpaca_powertabline'
+"NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
+NeoBundle 'Lokaltog/powerline'
+
+""" Color
+NeoBundle 'desert256.vim'
+NeoBundle 'mrkn256.vim'
+NeoBundle 'tomasr/molokai'
+NeoBundle 'vim-scripts/xoria256.vim'
+NeoBundle 'yuroyoro/yuroyoro256.vim'
+
+"" Edit {{{
+  " Align : 高機能整形・桁揃えプラグイン
+  NeoBundle 'Align'
+"
+"  " シンプルなメモ管理用プラグインmemolist.vim
+"  Bundle 'glidenote/memolist.vim'
+"
+"  " zencoding-vim is vim script support for expanding abbreviation like zen-coding
+"  Bundle 'mattn/zencoding-vim'
+"
+"  " operator-camelize : camel-caseへの変換
+"  Bundle 'operator-camelize'
+"
+"  " operator-replace : yankしたものでreplaceする
+""  Bundle 'operator-replace'
+"
+"  " vim-operator-user : 簡単にoperatorを定義できるようにする
+"  Bundle 'operator-user'
+"
+"  " martchr.vim : ==などの前後を整形
+"  Bundle 'smartchr'
+"
+"  " NERD_commenter.vim :最強コメント処理 (cでコメントをトグル)
+"  Bundle 'scrooloose/nerdcommenter.git'
+"
+"  " でtrue/false切替。他色々
+"  Bundle 'taku-o/vim-toggle'
+"" }}}
+"
+"" Completion {{{
+"  " 補完 neocomplcache.vim : 究極のVim的補完環境
+"  Bundle 'Shougo/neocomplcache'
+"
+"  " neocomplcacheのsinpet補完
+"  Bundle 'Shougo/neocomplcache-snippets-complete'
+"" }}}
+"
+"" Searching/Moving{{{
+"  " camelcasemotion : CamelCaseやsnake_case単位でのワード移動
+"  Bundle 'camelcasemotion'
+"
+"  " eregex.vim : vimの正規表現をrubyやperlの正規表現な入力でできる :%S/perlregex/
+"  Bundle 'eregex.vim'
+"
+"  " grep.vim : 外部のgrep利用。:Grepで対話形式でgrep :Rgrepは再帰
+"  Bundle 'grep.vim'
+"
+"  " matchit.vim : 「%」による対応括弧へのカーソル移動機能を拡張
+"  Bundle 'matchit.zip'
+"
+"  " vim-smartword : 単語移動がスマートな感じで
+"  Bundle 'smartword'
+"
+"  " smooth_scroll.vim : スクロールを賢く
+"  Bundle 'Smooth-Scroll'
+"
+"  " open-browser.vim : カーソルの下のURLを開くor単語を検索エンジンで検索
+"  Bundle 'tyru/open-browser.vim'
+"" }}}
+"
+"" Programming {{{
+"
+"  " perl omnicompletion for vim (including base class function compleltions ..
+"  Bundle 'c9s/perlomni.vim.git'
+"
+"  " エラーがある場所をhilight
+""  Bundle 'errormarker.vim'
+"
+"  " A Vim plugin that provides a convenient interactive calculator inside a buffer.
+"  Bundle 'gregsexton/VimCalc'
+"
+"  " Perldoc plugin for vim
+"  Bundle 'hotchpotch/perldoc-vim'
+"
+"  " Support for Perl 5 and Perl 6 in Vim
+""  Bundle 'petdance/vim-perl'
+"
+"  " Powerful file explorer implemented by Vim script
+"  Bundle 'Shougo/vimfiler'
+"
+"  " tagsを利用したソースコード閲覧・移動補助機能 tagsファイルの自動生成
+"  " Bundle 'Source-Explorer-srcexpl.vim'
+"
+"  " SQLUtilities : SQL整形、生成ユーティリティ
+"  Bundle 'SQLUtilities'
+"
+"  " ソースコード上のメソッド宣言、変数宣言の一覧を表示
+"  Bundle 'taglist.vim'
+"
+"  " quickrun.vim : 編集中のファイルを簡単に実行できるプラグイン
+"  Bundle 'thinca/vim-quickrun'
+"
+"  " perldocやphpmanual等のリファレンスをvim上で見る
+"  Bundle 'thinca/vim-ref'
+"
+"  " NERD_tree, taglist, srcexpl の統合
+"  " Bundle 'trinity.vim'
+"" }}}
+"
+"" Syntax {{{
+"  " JavaScript
+"  Bundle 'JavaScript-syntax'
+"
+"  " jQuery
+"  Bundle 'jQuery'
+"
+"  " coffee script
+""  Bundle 'kchmck/vim-coffee-script'
+"
+"  " nginx conf
+"  Bundle 'nginx.vim'
+"
+"  " markdown
+"  Bundle 'tpope/vim-markdown'
+"
+"  " syntax checking plugins exist for eruby, haml, html, javascript, php, python, ruby and sass.
+"  Bundle 'scrooloose/syntastic'
+"
+"  " scala
+"  Bundle 'yuroyoro/vim-scala'
+"" }}}
+"
+"" Buffer {{{
+"  " minibufexpl.vim : タブエディタ風にバッファ管理ウィンドウを表示
+"  "Bundle 'minibufexpl.vim'
+"
+"  " NERDTree : ツリー型エクスプローラ
+"  Bundle 'The-NERD-tree'
+"" }}}
+"
+"
+"" Encording {{{
+"  Bundle 'banyan/recognize_charcode.vim'
+"" }}}
+"
+"" Utility {{{
+"
+"  " cecutil.vim : 他のpluginのためのutillity1
+"  Bundle 'cecutil'
+"
+"  " Happy Haskell programming on Vim,  powered by ghc-mod
+"  Bundle 'eagletmt/ghcmod-vim'
+"
+"  " Vim plugin: A framework to read/write fake:path
+"  Bundle 'kana/vim-metarw'
+"
+"  " utillity
+"  Bundle 'L9'
+"
+"  " ステータスラインをカッコよくする
+"  Bundle 'Lokaltog/vim-powerline'
+"
+"  " vim Interface to Web API
+"  Bundle 'mattn/webapi-vim'
+"
+"  " vim-altercmd : Ex command拡張
+"  Bundle 'tyru/vim-altercmd'
+"
+"  " 編集中のファイルをscpでアップロードすることができる。
+"  Bundle 'ryoppy/vim-scp-upload'
+"
+"  " vimproc : vimから非同期実行。vimshelleで必要
+"  Bundle 'Shougo/vimproc.git'
+"
+"  " vimshell : vimのshell
+"  Bundle 'Shougo/vimshell.git'
+"
+"  " urilib.vim : vim scriptからURLを扱うライブラリ
+"  Bundle 'tyru/urilib.vim'
+"
+"  " Buffer管理のLibrary
+"  Bundle 'thinca/vim-openbuf'
+"
+"  " vimからGit操作する
+"  Bundle 'tpope/vim-fugitive'
+"
+"  "プラグインの読み込みパスを変更
+"  Bundle 'tpope/vim-pathogen'
+"
+"  " vim上のtwitter client
+""  Bundle 'TwitVim'
+"
+"  " The only one vim script which handles Blogger (http://www.blogger.com/) using metarw
+""  Bundle 'ujihisa/blogger.vim'
+"
+"  " A neocomplcache plugin for Haskell,  using ghc extensions
+"  Bundle 'ujihisa/neco-ghc'
+"
+"  " vimdoc 日本語
+"  Bundle 'yuroyoro/vimdoc_ja'
+"" }}}
+"
+"
+"" Unite {{{{
+"  " unite.vim : - すべてを破壊し、すべてを繋げ - vim scriptで実装されたanythingプラグイン
+"  Bundle 'Shougo/unite.vim'
+"  Bundle 'tsukkee/unite-help'
+"  Bundle 'h1mesuke/unite-outline'
+"  " Bundle 'Sixeight/unite-grep'
+"  Bundle 'basyura/unite-rails'
+"  Bundle 'thinca/vim-unite-history'
+"  Bundle 'tsukkee/unite-tag'
+"  Bundle 'choplin/unite-vim_hacks'
+"" }}}
+
+filetype plugin indent on
+
+NeoBundleCheck
+
