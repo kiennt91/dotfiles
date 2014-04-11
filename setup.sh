@@ -4,20 +4,35 @@
 # 使用しないファイルはシャープでコメントアウトすること。
 #============================================================
 
-DOT_FILES=(
+BASH_FILES=(
 .bashrc
 .bash_profile
+)
+
+for file in ${BASH_FILES[@]}
+do
+    ln -s $HOME/dotfiles/bash/$file $HOME/$file
+done
+
+GIT_FILES=(
 .gitconfig
 .git-completion.bash
 .git-flow-completion.sh
 .git-prompt.sh
+)
+
+for file in ${GIT_FILES[@]}
+do
+    ln -s $HOME/dotfiles/git/$file $HOME/$file
+done
+
+VIM_FILES=(
 .vimrc
 .vimrc.neobundle
 )
 
-for file in ${DOT_FILES[@]}
+for file in ${VIM_FILES[@]}
 do
-    ln -s $HOME/dotfiles/$file $HOME/$file
+    ln -s $HOME/dotfiles/vim/$file $HOME/$file
 done
-
 
