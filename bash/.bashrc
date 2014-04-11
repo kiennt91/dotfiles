@@ -11,6 +11,12 @@ alias g='git'
 alias ll="ls -l"
 alias la="ls -la"
 
+alias dstat-full='dstat -Tclmdrn'
+alias dstat-mem='dstat -Tclm'
+alias dstat-cpu='dstat -Tclr'
+alias dstat-net='dstat -Tclnd'
+alias dstat-disk='dstat -Tcldr'
+
 # prompt command
 hg_branch() {
     hg branch 2> /dev/null | awk '{print " (hg:" $1 ")"}'
