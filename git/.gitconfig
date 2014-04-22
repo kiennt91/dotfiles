@@ -20,7 +20,8 @@
     cam = commit --amend
     sh = show
     so = remote show origin
-    st = status
+    st = status --branch --short
+    gr = grep --line-number --show-function --color --heading --break
     ft = fetch
     br = branch
     hist = log --graph --pretty=format:'%Cred%h%Creset - %cd | %s %Cgreen(%cr)%C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=short -20
