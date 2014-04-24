@@ -43,6 +43,7 @@
     commitencoding = utf-8
 
 [merge]
+    ff = false
     tool = extMerge
 [mergetool "extMerge"]
     cmd = extMerge "$BASE" "$LOCAL" "$REMOTE" "$MERGE"
