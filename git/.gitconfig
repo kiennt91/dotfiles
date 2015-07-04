@@ -57,3 +57,5 @@
 
 [push]
     default = simple
+[pull]
+    rebase = true
