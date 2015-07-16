@@ -36,3 +36,12 @@ do
     ln -s $HOME/dotfiles/vim/$file $HOME/$file
 done
 
+TMUX_FILES=(
+.tmux.conf
+)
+
+for file in ${TMUX_FILES[@]}
+do
+    ln -s $HOME/dotfiles/tmux/$file $HOME/$file
+done
+
