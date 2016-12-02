@@ -26,3 +26,9 @@ http://qiita.com/puriketu99/items/1c32d3f24cc2919203eb
 
 補足: git clone してきたあとは、vim 上で :NeoBundleInstall を実行すればよい。
 
+イメージについて
+---------------
+
+![alt tag](https://s17.postimg.org/hych1cgpb/git.png)
+
+![alt tag](https://s13.postimg.org/6bwltdftj/image.png)
